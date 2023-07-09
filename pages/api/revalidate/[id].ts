@@ -13,7 +13,10 @@ export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse<Data | Msg>
 ) {
-  console.log('Revalidating detail page...');
+  console.log('Revalidating detail page...')
+  if(req.query.secret !== process.env.REVALIDATE_SECRET) {
+    return res.status(401).json({message : 'Invalid secret'})
+  }
   let revalidated = false
   const {query : { id }} = req
   try {
