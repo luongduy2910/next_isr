@@ -14,7 +14,7 @@ export const useMutateComment = () => {
     },
     {
       onSuccess: (res) => {
-        // revalidateSingle(res[0].note_id)
+        revalidateSingle(res[0].note_id)
         reset()
         alert('Successfully completed !!')
       },
@@ -35,7 +35,7 @@ export const useMutateComment = () => {
     },
     {
       onSuccess: (res) => {
-        // revalidateSingle(res[0].note_id)
+        revalidateSingle(res[0].note_id)
         reset()
         alert('Successfully completed')
       },
@@ -53,7 +53,7 @@ export const useMutateComment = () => {
     },
     {
       onSuccess: (res) => {
-        // revalidateSingle(res[0].id)
+        revalidateSingle(res[0].id)
         reset()
         alert('Successfully completed')
       },
